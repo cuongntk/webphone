@@ -12,6 +12,16 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
   }
 ]);
 
+angular.module(ApplicationConfiguration.applicationModuleName).config(['$translateProvider',
+  function ($translateProvider) {
+    // add translation tables
+    $translateProvider.translations('en', translationsEN);
+    $translateProvider.translations('de', translationsDE);
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.fallbackLanguage('en');
+  }
+]);
+
 angular.module(ApplicationConfiguration.applicationModuleName).run(function ($rootScope, $state, Authentication) {
 
   // Check authentication before changing state
