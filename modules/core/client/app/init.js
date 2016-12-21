@@ -3,11 +3,25 @@
 var translationsEN = {
   MENU_SIGNUP: 'Sign up',
   MENU_SIGNIN: 'Sign in',
+  SIGNUP_EMAIL: 'Email',
+  SIGNUP_EMAIL_REQUIRED: 'Email address is required.',
+  SIGNUP_EMAIL_INVALID: 'Email address is invalid.',
+  SIGNUP_PASSWORD: 'Password',
+  SIGNUP_PASSWORD_REQUIRED: 'Password is required.',
+  SIGNUP_PASSWORD_REQUIREMENTS: 'Password Requirements',
+  SIGNUP_OR: 'or',
 };
  
 var translationsVN= {
   MENU_SIGNUP: 'Đăng kí',
   MENU_SIGNIN: 'Đăng nhập',
+  SIGNUP_EMAIL: 'Email',
+  SIGNUP_EMAIL_REQUIRED: 'Bạn chưa nhập Email.',
+  SIGNUP_EMAIL_INVALID: 'Địa chỉ Email không hợp lệ.',
+  SIGNUP_PASSWORD: 'Mật khẩu',
+  SIGNUP_PASSWORD_REQUIRED: 'Bạn chưa nhập Mật khẩu.',
+  SIGNUP_PASSWORD_REQUIREMENTS: 'Độ mạnh Mật khẩu',
+  SIGNUP_OR: 'hoặc',
 };
 
 //Start by defining the main module and adding the module dependencies
