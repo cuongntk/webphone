@@ -28,21 +28,11 @@ var validateLocalStrategyEmail = function (email) {
  * User Schema
  */
 var UserSchema = new Schema({
-  firstName: {
-    type: String,
-    trim: true,
-    default: '',
-    validate: [validateLocalStrategyProperty, 'Please fill in your first name']
-  },
-  lastName: {
-    type: String,
-    trim: true,
-    default: '',
-    validate: [validateLocalStrategyProperty, 'Please fill in your last name']
-  },
   displayName: {
     type: String,
-    trim: true
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your display name']
   },
   email: {
     type: String,
@@ -51,13 +41,6 @@ var UserSchema = new Schema({
     trim: true,
     default: '',
     validate: [validateLocalStrategyEmail, 'Please fill a valid email address']
-  },
-  username: {
-    type: String,
-    unique: 'Username already exists',
-    required: 'Please fill in a username',
-    lowercase: true,
-    trim: true
   },
   password: {
     type: String,

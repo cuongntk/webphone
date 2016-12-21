@@ -3,6 +3,9 @@
 var translationsEN = {
   MENU_SIGNUP: 'Sign up',
   MENU_SIGNIN: 'Sign in',
+  SIGNUP_HEADER: 'The phone number will be sent to your Email',
+  SIGNUP_DISPLAYNAME: 'Display name',
+  SIGNUP_DISPLAYNAME_REQUIRED: 'Display name is required.',
   SIGNUP_EMAIL: 'Email',
   SIGNUP_EMAIL_REQUIRED: 'Email address is required.',
   SIGNUP_EMAIL_INVALID: 'Email address is invalid.',
@@ -15,6 +18,9 @@ var translationsEN = {
 var translationsVN= {
   MENU_SIGNUP: 'Đăng kí',
   MENU_SIGNIN: 'Đăng nhập',
+  SIGNUP_HEADER: 'Số điện thoại sẽ được gửi vào Email của bạn',
+  SIGNUP_DISPLAYNAME: 'Tên hiển thị',
+  SIGNUP_DISPLAYNAME_REQUIRED: 'Bạn chưa nhập tên hiển thị.',
   SIGNUP_EMAIL: 'Email',
   SIGNUP_EMAIL_REQUIRED: 'Bạn chưa nhập Email.',
   SIGNUP_EMAIL_INVALID: 'Địa chỉ Email không hợp lệ.',
