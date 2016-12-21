@@ -13,6 +13,17 @@ var translationsEN = {
   SIGNUP_PASSWORD_REQUIRED: 'Password is required.',
   SIGNUP_PASSWORD_REQUIREMENTS: 'Password Requirements',
   SIGNUP_OR: 'or',
+  SIGNIN_EMAIL: 'Email',
+  SIGNIN_EMAIL_REQUIRED: 'Email address is required.',
+  SIGNIN_EMAIL_INVALID: 'Email address is invalid.',
+  SIGNIN_PASSWORD: 'Password',
+  SIGNIN_PASSWORD_REQUIRED: 'Password is required.',
+  SIGNIN_FORGOT_PASSWORD: 'Forgot your password?',
+  FORGOT_PASSWORD_HEADER: 'Restore your password',
+  FORGOT_PASSWORD_LABEL: 'Enter your account email.',
+  RESET_PASSWORD_HEADER: 'Reset your password',
+  RESET_PASSWORD_NEW: 'New Password',
+  RESET_PASSWORD_VERIFY: 'Verify Password',
 };
  
 var translationsVN= {
@@ -28,6 +39,17 @@ var translationsVN= {
   SIGNUP_PASSWORD_REQUIRED: 'Bạn chưa nhập Mật khẩu.',
   SIGNUP_PASSWORD_REQUIREMENTS: 'Độ mạnh Mật khẩu',
   SIGNUP_OR: 'hoặc',
+  SIGNIN_EMAIL: 'Email',
+  SIGNIN_EMAIL_REQUIRED: 'Bạn chưa nhập Email.',
+  SIGNIN_EMAIL_INVALID: 'Địa chỉ Email không hợp lệ.',
+  SIGNIN_PASSWORD: 'Mật khẩu',
+  SIGNIN_PASSWORD_REQUIRED: 'Bạn chưa nhập Mật khẩu.',
+  SIGNIN_FORGOT_PASSWORD: 'Bạn quên Mật khẩu?',
+  FORGOT_PASSWORD_HEADER: 'Khôi phục Mật khẩu',
+  FORGOT_PASSWORD_LABEL: 'Nhập địa chỉ email của bạn.',
+  RESET_PASSWORD_HEADER: 'Nhập mật khẩu mới của bạn',
+  RESET_PASSWORD_NEW: 'Mật khẩu mới',
+  RESET_PASSWORD_VERIFY: 'Nhập lại',
 };
 
 //Start by defining the main module and adding the module dependencies

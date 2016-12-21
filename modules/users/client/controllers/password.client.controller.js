@@ -20,6 +20,7 @@ angular.module('users').controller('PasswordController', ['$scope', '$stateParam
         return false;
       }
 
+      $scope.credentials.username = $scope.credentials.email;
       $http.post('/api/auth/forgot', $scope.credentials).success(function (response) {
         // Show user success message and clear form
         $scope.credentials = null;
