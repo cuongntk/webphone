@@ -27,6 +27,7 @@
   "SIGNIN_PASSWORD": "Password",
   "SIGNIN_PASSWORD_REQUIRED": "Password is required.",
   "SIGNIN_FORGOT_PASSWORD": "Forgot your password?",
+  "SIGNIN_ERR_0": "Account is not actived",
   
   "FORGOT_PASSWORD_HEADER": "Restore your password",
   "FORGOT_PASSWORD_LABEL": "Enter your account email.",

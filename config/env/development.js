@@ -38,7 +38,7 @@ module.exports = {
     }
   },
   app: {
-    title: defaultEnvConfig.app.title + ' - Development Environment'
+    title: defaultEnvConfig.app.title + ' - Free call over internet'
   },
   facebook: {
     clientID: process.env.FACEBOOK_ID || 'APP_ID',

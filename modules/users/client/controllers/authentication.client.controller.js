@@ -53,11 +53,14 @@ angular.module('users').controller('AuthenticationController', ['$filter', '$sco
 
       $scope.credentials.username = $scope.credentials.email;
       $http.post('/api/auth/signin', $scope.credentials).success(function (response) {
-        // If successful we assign the response to the global user model
-        $scope.authentication.user = response;
-
-        // And redirect to the previous or home page
-        $state.go($state.previous.state.name || 'home', $state.previous.params);
+        if (response.status === 1) { // active
+          // If successful we assign the response to the global user model
+          $scope.authentication.user = response;
+          // And redirect to the previous or home page
+          $state.go($state.previous.state.name || 'home', $state.previous.params);
+        } else {
+          $scope.error = $translate('SIGNIN_ERR_0');
+        }
       }).error(function (response) {
         $scope.error = response.message;
       });

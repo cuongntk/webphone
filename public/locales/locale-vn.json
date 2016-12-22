@@ -27,6 +27,7 @@
   "SIGNIN_PASSWORD": "Mật khẩu",
   "SIGNIN_PASSWORD_REQUIRED": "Bạn chưa nhập Mật khẩu.",
   "SIGNIN_FORGOT_PASSWORD": "Bạn quên Mật khẩu?",
+  "SIGNIN_ERR_0": "Tài khoản chưa được kích hoạt",
   
   "FORGOT_PASSWORD_HEADER": "Khôi phục Mật khẩu",
   "FORGOT_PASSWORD_LABEL": "Nhập địa chỉ email của bạn.",
