@@ -4,10 +4,13 @@
  * Module dependencies.
  */
 var path = require('path'),
+  config = require(path.resolve('./config/config')),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   mongoose = require('mongoose'),
   passport = require('passport'),
-  User = mongoose.model('User');
+  User = mongoose.model('User'),
+  nodemailer = require('nodemailer'),
+  async = require('async');
 
 // URLs for which user can't be redirected on signin
 var noReturnUrls = [
@@ -29,6 +32,10 @@ exports.signup = function (req, res) {
   // Add missing user fields
   user.provider = 'local';
   //user.displayName = user.firstName + ' ' + user.lastName;
+  var phone = Math.round(new Date().getTime() / 1000);
+  phone = phone.toString().slice(-6);
+  phone = '0' + phone + Math.floor((Math.random() * 1000) + 1);
+  user.phone = phone;
 
   // Then save the user
   user.save(function (err) {

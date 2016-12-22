@@ -23,7 +23,11 @@ var translationsEN = {
   FORGOT_PASSWORD_LABEL: 'Enter your account email.',
   RESET_PASSWORD_HEADER: 'Reset your password',
   RESET_PASSWORD_NEW: 'New Password',
+  RESET_PASSWORD_NEW_REQUIRED: 'Enter a new password.',
   RESET_PASSWORD_VERIFY: 'Verify Password',
+  RESET_PASSWORD_VERIFY_REQUIRED: 'Enter the password again to verify.',
+  RESET_PASSWORD_VERIFY_MATCH: 'Passwords do not match.',
+  RESET_PASSWORD_BUTTON: 'Update Password',
 };
  
 var translationsVN= {
@@ -49,7 +53,11 @@ var translationsVN= {
   FORGOT_PASSWORD_LABEL: 'Nhập địa chỉ email của bạn.',
   RESET_PASSWORD_HEADER: 'Nhập mật khẩu mới của bạn',
   RESET_PASSWORD_NEW: 'Mật khẩu mới',
+  RESET_PASSWORD_NEW_REQUIRED: 'Nhập mật khẩu mới.',
   RESET_PASSWORD_VERIFY: 'Nhập lại',
+  RESET_PASSWORD_VERIFY_REQUIRED: 'Nhập lại mật khẩu mới lần nữa.',
+  RESET_PASSWORD_VERIFY_MATCH: 'Các mật khẩu không khớp.',
+  RESET_PASSWORD_BUTTON: 'Cập nhật Mật khẩu',
 };
 
 //Start by defining the main module and adding the module dependencies

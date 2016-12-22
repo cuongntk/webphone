@@ -42,6 +42,12 @@ var UserSchema = new Schema({
     default: '',
     validate: [validateLocalStrategyEmail, 'Please fill a valid email address']
   },
+  phone: {
+    type: String,
+    unique: true,
+    trim: true,
+    default: '',
+  },
   username: {
     type: String,
     unique: false,
@@ -74,6 +80,12 @@ var UserSchema = new Schema({
     }],
     default: ['user'],
     required: 'Please provide at least one role'
+  },
+  status: {
+    type: Number, 
+    min: 0, 
+    max: 5,
+    default: 1,
   },
   updated: {
     type: Date
