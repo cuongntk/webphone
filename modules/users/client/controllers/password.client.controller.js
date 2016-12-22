@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('users').controller('PasswordController', ['$scope', '$stateParams', '$http', '$location', 'Authentication', 'PasswordValidator',
-  function ($scope, $stateParams, $http, $location, Authentication, PasswordValidator) {
+angular.module('users').controller('PasswordController', ['$scope', '$filter', '$stateParams', '$http', '$location', 'Authentication', 'PasswordValidator',
+  function ($scope, $filter, $stateParams, $http, $location, Authentication, PasswordValidator) {
+    var $translate = $filter('translate');
     $scope.authentication = Authentication;
     $scope.popoverMsg = PasswordValidator.getPopoverMsg();
 
@@ -29,7 +30,16 @@ angular.module('users').controller('PasswordController', ['$scope', '$stateParam
       }).error(function (response) {
         // Show user error message and clear form
         $scope.credentials = null;
-        $scope.error = response.message;
+        // Translate some special errors
+        if (response.message.indexOf('No account with that username has been found') !== -1) {
+          $scope.error = $translate('FORGOT_PASSWORD_EMAIL_NOT_FOUND');
+        } else if (response.message.indexOf('Failure sending email') !== -1) {
+          $scope.error = $translate('FORGOT_PASSWORD_EMAIL_SEND_FAIL');
+        } else if (response.message.indexOf('An email has been sent to the provided email with further instructions.') !== -1) {
+          $scope.error = $translate('FORGOT_PASSWORD_EMAIL_SEND_SUCCESS');
+        } else {
+          $scope.error = response.message;
+        }
       });
     };
 

@@ -30,6 +30,9 @@
   
   "FORGOT_PASSWORD_HEADER": "Khôi phục Mật khẩu",
   "FORGOT_PASSWORD_LABEL": "Nhập địa chỉ email của bạn.",
+  "FORGOT_PASSWORD_EMAIL_NOT_FOUND": "Không tìm thấy tài khoản dùng Email này",
+  "FORGOT_PASSWORD_EMAIL_SEND_FAIL": "Có lỗi khi gửi mail",
+  "FORGOT_PASSWORD_EMAIL_SEND_SUCCESS": "Email hướng dẫn khôi phục Mật khẩu đã được gửi",
   
   "RESET_PASSWORD_HEADER": "Nhập mật khẩu mới của bạn",
   "RESET_PASSWORD_NEW": "Mật khẩu mới",
