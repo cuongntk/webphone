@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('users')
-  .directive('passwordValidator', ['PasswordValidator', '$translate', function(PasswordValidator, $translate) {
+  .directive('passwordValidator', ['PasswordValidator', '$filter', function(PasswordValidator, $filter) {
+    var $translate = $filter('translate');
     return {
       require: 'ngModel',
       link: function(scope, element, attrs, ngModel) {
@@ -28,34 +29,11 @@ angular.module('users')
             scope.requirementsProgress = requirementsMeter[requirementsIdx].progress;
 
             if (result.errors.length) {
-              // Translate errors
-              if ($translate.use() === 'vn') {
-                for (var i = 0; i < result.errors.length; i++) { 
-                  switch (result.errors[i]) {
-                    case 'The password must be at least 10 characters long.':
-                      result.errors[i] = 'Mật khẩu phải dài ít nhất 10 kí tự.';
-                      break;
-                    case 'The password must contain at least one lowercase letter.':
-                      result.errors[i] = 'Mật khẩu phải chứa ít nhất 1 kí tự thường.';
-                      break;
-                    case 'The password must contain at least one uppercase letter.':
-                      result.errors[i] = 'Mật khẩu phải chứa ít nhất 1 kí tự viết hoa.';
-                      break;
-                    case 'The password must contain at least one special character.':
-                      result.errors[i] = 'Mật khẩu phải chứa ít nhất 1 kí tự đặc biệt.';
-                      break;
-                    case 'The password may not contain sequences of three or more repeated characters.':
-                      result.errors[i] = 'Mật khẩu chỉ có thể chứa tối đa 2 kí tự liên tiếp giống nhau.';
-                      break;
-                    case 'The password must contain at least one number.':
-                      result.errors[i] = 'Mật khẩu phải chứa ít nhất 1 số.';
-                      break;
-                    case 'The password must be at least 10 characters long.':
-                      result.errors[i] = 'Mật khẩu phải dài ít nhất 10 kí tự.';
-                      break;
-                  }
-                }
+              // Translate some special errors
+              for (var i = 0; i < result.errors.length; i++) { 
+                result.errors[i] = $translate('SIGNUP_PASSWORD_ERR_' + i);
               }
+              
               scope.popoverMsg = PasswordValidator.getPopoverMsg();
               scope.passwordErrors = result.errors;
               status = false;

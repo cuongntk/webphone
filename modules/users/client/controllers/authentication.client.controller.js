@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('users').controller('AuthenticationController', ['$scope', '$state', '$http', '$location', '$window', 'Authentication', 'PasswordValidator',
-  function ($scope, $state, $http, $location, $window, Authentication, PasswordValidator) {
+angular.module('users').controller('AuthenticationController', ['$filter', '$scope', '$state', '$http', '$location', '$window', 'Authentication', 'PasswordValidator',
+  function ($filter, $scope, $state, $http, $location, $window, Authentication, PasswordValidator) {
+    var $translate = $filter('translate');
     $scope.authentication = Authentication;
     $scope.popoverMsg = PasswordValidator.getPopoverMsg();
 
@@ -30,7 +31,14 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
         // And redirect to the previous or home page
         $state.go($state.previous.state.name || 'home', $state.previous.params);
       }).error(function (response) {
-        $scope.error = response.message;
+        // Translate some special errors
+        if (response.message.indexOf('email already exists') !== -1) {
+          $scope.error = $translate('SIGNUP_EMAIL_EXIST');
+        } else if (response.message.indexOf('Please fill a valid email address') !== -1) { 
+          $scope.error = $translate('SIGNUP_EMAIL_INVALID');
+        } else {
+          $scope.error = response.message;
+        }
       });
     };
 
