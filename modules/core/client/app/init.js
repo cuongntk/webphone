@@ -1,65 +1,5 @@
 'use strict';
 
-var translationsEN = {
-  MENU_SIGNUP: 'Sign up',
-  MENU_SIGNIN: 'Sign in',
-  SIGNUP_HEADER: 'The phone number will be sent to your Email',
-  SIGNUP_DISPLAYNAME: 'Display name',
-  SIGNUP_DISPLAYNAME_REQUIRED: 'Display name is required.',
-  SIGNUP_EMAIL: 'Email',
-  SIGNUP_EMAIL_REQUIRED: 'Email address is required.',
-  SIGNUP_EMAIL_INVALID: 'Email address is invalid.',
-  SIGNUP_PASSWORD: 'Password',
-  SIGNUP_PASSWORD_REQUIRED: 'Password is required.',
-  SIGNUP_PASSWORD_REQUIREMENTS: 'Password Requirements',
-  SIGNUP_OR: 'or',
-  SIGNIN_EMAIL: 'Email',
-  SIGNIN_EMAIL_REQUIRED: 'Email address is required.',
-  SIGNIN_EMAIL_INVALID: 'Email address is invalid.',
-  SIGNIN_PASSWORD: 'Password',
-  SIGNIN_PASSWORD_REQUIRED: 'Password is required.',
-  SIGNIN_FORGOT_PASSWORD: 'Forgot your password?',
-  FORGOT_PASSWORD_HEADER: 'Restore your password',
-  FORGOT_PASSWORD_LABEL: 'Enter your account email.',
-  RESET_PASSWORD_HEADER: 'Reset your password',
-  RESET_PASSWORD_NEW: 'New Password',
-  RESET_PASSWORD_NEW_REQUIRED: 'Enter a new password.',
-  RESET_PASSWORD_VERIFY: 'Verify Password',
-  RESET_PASSWORD_VERIFY_REQUIRED: 'Enter the password again to verify.',
-  RESET_PASSWORD_VERIFY_MATCH: 'Passwords do not match.',
-  RESET_PASSWORD_BUTTON: 'Update Password',
-};
- 
-var translationsVN= {
-  MENU_SIGNUP: 'Đăng kí',
-  MENU_SIGNIN: 'Đăng nhập',
-  SIGNUP_HEADER: 'Số điện thoại sẽ được gửi vào Email của bạn',
-  SIGNUP_DISPLAYNAME: 'Tên hiển thị',
-  SIGNUP_DISPLAYNAME_REQUIRED: 'Bạn chưa nhập tên hiển thị.',
-  SIGNUP_EMAIL: 'Email',
-  SIGNUP_EMAIL_REQUIRED: 'Bạn chưa nhập Email.',
-  SIGNUP_EMAIL_INVALID: 'Địa chỉ Email không hợp lệ.',
-  SIGNUP_PASSWORD: 'Mật khẩu',
-  SIGNUP_PASSWORD_REQUIRED: 'Bạn chưa nhập Mật khẩu.',
-  SIGNUP_PASSWORD_REQUIREMENTS: 'Độ mạnh Mật khẩu',
-  SIGNUP_OR: 'hoặc',
-  SIGNIN_EMAIL: 'Email',
-  SIGNIN_EMAIL_REQUIRED: 'Bạn chưa nhập Email.',
-  SIGNIN_EMAIL_INVALID: 'Địa chỉ Email không hợp lệ.',
-  SIGNIN_PASSWORD: 'Mật khẩu',
-  SIGNIN_PASSWORD_REQUIRED: 'Bạn chưa nhập Mật khẩu.',
-  SIGNIN_FORGOT_PASSWORD: 'Bạn quên Mật khẩu?',
-  FORGOT_PASSWORD_HEADER: 'Khôi phục Mật khẩu',
-  FORGOT_PASSWORD_LABEL: 'Nhập địa chỉ email của bạn.',
-  RESET_PASSWORD_HEADER: 'Nhập mật khẩu mới của bạn',
-  RESET_PASSWORD_NEW: 'Mật khẩu mới',
-  RESET_PASSWORD_NEW_REQUIRED: 'Nhập mật khẩu mới.',
-  RESET_PASSWORD_VERIFY: 'Nhập lại',
-  RESET_PASSWORD_VERIFY_REQUIRED: 'Nhập lại mật khẩu mới lần nữa.',
-  RESET_PASSWORD_VERIFY_MATCH: 'Các mật khẩu không khớp.',
-  RESET_PASSWORD_BUTTON: 'Cập nhật Mật khẩu',
-};
-
 //Start by defining the main module and adding the module dependencies
 angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
 
@@ -74,9 +14,10 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
 
 angular.module(ApplicationConfiguration.applicationModuleName).config(['$translateProvider',
   function ($translateProvider) {
-    // add translation tables
-    $translateProvider.translations('en', translationsEN);
-    $translateProvider.translations('vn', translationsVN);
+    $translateProvider.useStaticFilesLoader({
+      prefix: 'locales/locale-',
+      suffix: '.json'
+    });
     $translateProvider.preferredLanguage('vn');
     $translateProvider.fallbackLanguage('vn');
   }
