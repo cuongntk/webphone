@@ -15,14 +15,14 @@ angular.module('friends').config(['$stateProvider',
       })
       .state('friends.list', {
         url: '',
-        templateUrl: 'modules/articles/client/views/list-articles.client.view.html',
+        templateUrl: 'modules/friends/client/views/list-friends.client.view.html',
         data: {
           roles: ['user', 'admin']
         }
       })
       .state('friends.create', {
         url: '/create',
-        templateUrl: 'modules/articles/client/views/create-article.client.view.html',
+        templateUrl: 'modules/friends/client/views/create-friend.client.view.html',
         data: {
           roles: ['user', 'admin']
         }

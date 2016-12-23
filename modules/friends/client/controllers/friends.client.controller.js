@@ -1,8 +1,8 @@
 'use strict';
 
 // Articles controller
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
-  function ($scope, $stateParams, $location, Authentication, Articles) {
+angular.module('friends').controller('FriendsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Friends',
+  function ($scope, $stateParams, $location, Authentication, Friends) {
     $scope.authentication = Authentication;
 
     // Create new Article
@@ -16,7 +16,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       }
 
       // Create new Article object
-      var article = new Articles({
+      var article = new Friends({
         title: this.title,
         content: this.content
       });
@@ -71,12 +71,12 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
     // Find a list of Articles
     $scope.find = function () {
-      $scope.articles = Articles.query();
+      $scope.friends = Friends.query();
     };
 
     // Find existing Article
     $scope.findOne = function () {
-      $scope.article = Articles.get({
+      $scope.friend = Friends.get({
         articleId: $stateParams.articleId
       });
     };
