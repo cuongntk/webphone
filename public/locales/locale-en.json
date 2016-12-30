@@ -41,5 +41,11 @@
   "RESET_PASSWORD_VERIFY": "Verify Password",
   "RESET_PASSWORD_VERIFY_REQUIRED": "Enter the password again to verify.",
   "RESET_PASSWORD_VERIFY_MATCH": "Passwords do not match.",
-  "RESET_PASSWORD_BUTTON": "Update Password"
+  "RESET_PASSWORD_BUTTON": "Update Password",
+  
+  "FRIEND_ADD_HEADER": "Add friend",
+  "FRIEND_ADD_NAME": "Display name",
+  "FRIEND_ADD_NAME_REQUIRED": "Display name is required.",
+  "FRIEND_ADD_PHONE": "Phone number",
+  "FRIEND_ADD_PHONE_REQUIRED": "Phone number is required."
 }

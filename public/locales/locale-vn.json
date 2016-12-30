@@ -41,5 +41,11 @@
   "RESET_PASSWORD_VERIFY": "Nhập lại",
   "RESET_PASSWORD_VERIFY_REQUIRED": "Nhập lại mật khẩu mới lần nữa.",
   "RESET_PASSWORD_VERIFY_MATCH": "Các mật khẩu không khớp.",
-  "RESET_PASSWORD_BUTTON": "Cập nhật Mật khẩu"
+  "RESET_PASSWORD_BUTTON": "Cập nhật Mật khẩu",
+  
+  "FRIEND_ADD_HEADER": "Thêm bạn",
+  "FRIEND_ADD_NAME": "Tên danh bạ",
+  "FRIEND_ADD_NAME_REQUIRED": "Bạn chưa nhập tên",
+  "FRIEND_ADD_PHONE": "Số điện thoại",
+  "FRIEND_ADD_PHONE_REQUIRED": "Bạn chưa nhập số điện thoại"
 }

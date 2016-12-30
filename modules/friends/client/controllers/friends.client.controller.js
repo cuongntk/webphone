@@ -10,24 +10,24 @@ angular.module('friends').controller('FriendsController', ['$scope', '$statePara
       $scope.error = null;
 
       if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'articleForm');
+        $scope.$broadcast('show-errors-check-validity', 'friendForm');
 
         return false;
       }
 
       // Create new Article object
-      var article = new Friends({
-        title: this.title,
-        content: this.content
+      var friend = new Friends({
+        friendName: this.friendName,
+        friendPhone: this.friendPhone
       });
 
       // Redirect after save
-      article.$save(function (response) {
-        $location.path('articles/' + response._id);
+      friend.$save(function (response) {
+        $location.path('friends/' + response._id);
 
         // Clear form fields
-        $scope.title = '';
-        $scope.content = '';
+        $scope.friendName = '';
+        $scope.friendPhone = '';
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });

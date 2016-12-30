@@ -18,10 +18,16 @@ var FriendSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   },
-  friend_name: {
+  friendName: {
     type: String,
     default: '',
     trim: true
+  },
+  friendPhone: {
+    type: String,
+    unique: true,
+    trim: true,
+    default: '',
   },
   status: {
     type: Number, 

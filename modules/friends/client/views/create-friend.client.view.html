@@ -1,20 +1,23 @@
-<section ng-controller="ArticlesController">
+<section ng-controller="FriendsController">
   <div class="page-header">
-    <h1>Add Friend</h1>
+    <h1>{{ 'FRIEND_ADD_HEADER' | translate }}</h1>
   </div>
   <div class="col-md-12">
-    <form name="articleForm" class="form-horizontal" ng-submit="create(articleForm.$valid)" novalidate>
+    <form name="friendForm" class="form-horizontal" ng-submit="create(friendForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="title">Title</label>
-          <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>
-          <div ng-messages="articleForm.title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Article title is required.</p>
+          <label for="friendName">{{ 'FRIEND_ADD_NAME' | translate }}</label>
+          <input name="friendName" type="text" ng-model="friendName" id="friendName" class="form-control" placeholder="{{ 'FRIEND_ADD_NAME' | translate }}" required>
+          <div ng-messages="friendForm.friendName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">{{ 'FRIEND_ADD_NAME_REQUIRED' | translate }}</p>
           </div>
         </div>
-        <div class="form-group">
-          <label for="content">Content</label>
-          <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        <div class="form-group" show-errors>
+          <label for="friendPhone">{{ 'FRIEND_ADD_PHONE' | translate }}</label>
+          <input name="friendPhone" type="text" ng-model="friendPhone" id="friendPhone" class="form-control" placeholder="{{ 'FRIEND_ADD_PHONE' | translate }}" required>
+          <div ng-messages="friendForm.friendPhone.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">{{ 'FRIEND_ADD_PHONE_REQUIRED' | translate }}</p>
+          </div>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-default">

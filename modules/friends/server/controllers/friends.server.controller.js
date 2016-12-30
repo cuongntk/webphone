@@ -96,7 +96,7 @@ exports.articleByID = function (req, res, next, id) {
     });
   }
 
-  Article.findById(id).populate('user', 'displayName').exec(function (err, article) {
+  Friend.findById(id).populate('user', 'displayName').exec(function (err, article) {
     if (err) {
       return next(err);
     } else if (!article) {
